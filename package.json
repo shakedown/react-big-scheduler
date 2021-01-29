@@ -1,6 +1,6 @@
 {
-  "name": "react-big-scheduler",
-  "version": "0.2.7",
+  "name": "scheduler-react",
+  "version": "0.0.1",
   "description": "A scheduler and resource planning component built for React and made for modern browsers (IE10+)",
   "keywords": [
     "scheduler",
@@ -21,7 +21,7 @@
   "author": "Stephen Chou <27788280@qq.com> (https://github.com/StephenChou1017)",
   "repository": {
     "type": "git",
-    "url": "git@github.com:StephenChou1017/react-big-scheduler.git"
+    "url": "git+ssh://git@github.com/StephenChou1017/react-big-scheduler.git"
   },
   "bugs": {
     "url": "http://github.com/StephenChou1017/react-big-scheduler/issues"
