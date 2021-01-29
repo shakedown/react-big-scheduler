@@ -17,15 +17,7 @@
     "CHANGELOG.md"
   ],
   "main": "lib/index",
-  "homepage": "https://github.com/StephenChou1017/react-big-scheduler",
-  "author": "Stephen Chou <27788280@qq.com> (https://github.com/StephenChou1017)",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/StephenChou1017/react-big-scheduler.git"
-  },
-  "bugs": {
-    "url": "http://github.com/StephenChou1017/react-big-scheduler/issues"
-  },
+
   "license": "MIT",
   "config": {},
   "scripts": {
