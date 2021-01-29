@@ -1,25 +1,17 @@
-# react-big-scheduler ![npm](https://img.shields.io/npm/v/react-big-scheduler.svg?style=plastic)
+# scheduler-react ![npm](https://img.shields.io/npm/v/scheduler-react.svg?style=plastic)
 
-A scheduler and resource planning component built for React and made for modern browsers (IE10+), IE needs babel-polyfill.  
-**From the npm version 0.2.6, Scheduler will use responsive layout by default(set SchedulerData.config.schedulerWidth to a percentage instead of a number).**
-
-[Online demo](https://stephenchou1017.github.io/scheduler/#/)
+A scheduler and resource planning component built for React.
 
 Inspired by [Full Calendar Scheduler](https://fullcalendar.io/scheduler/).
-
-## Version selection
-
-- antd >= 3.9.0 ? react-big-scheduler@0.2.7 : react-big-scheduler@0.2.4
-
 ## Use and Setup
 
-`npm install react-big-scheduler --save`
+`npm install scheduler-react --save`
 
 ```js
 //1. import
-import Scheduler, {SchedulerData, ViewTypes, DATE_FORMAT} from 'react-big-scheduler'
+import Scheduler, {SchedulerData, ViewTypes, DATE_FORMAT} from 'scheduler-react'
 //include `react-big-scheduler/lib/css/style.css` for styles, link it in html or import it here
-import 'react-big-scheduler/lib/css/style.css'
+import 'scheduler-react/lib/css/style.css'
 import moment from 'moment'
 ...
 
@@ -147,10 +139,10 @@ constructor(date=moment().format(DATE_FORMAT), viewType = ViewTypes.Week,
   view type, and will render the time window of the `2017-12` month in `ViewTypes.Month` view type.
 - `viewType` is the initial view type, now Scheduler supports `Day`, `Week`, `Month`, `Quarter`, `Year` 5 built-in view types,
   in addition Scheduler now supports `Custom`, `Custom1`, `Custom2` 3 custom view types at the same time, in which you can control
-  the time window yourself, refer to [this example](https://stephenchou1017.github.io/scheduler/#/customtimewindow). `viewType`,
+  the time window yourself. `viewType`,
   `showAgenda` and `isEventPerspective` are a group which should be contained in the SchedulerData.config.views array,
   and they together decide which view should be rendered. When `showAgenda` and `isEventPerspective` are both `false`,
-  Scheduler will render the resource view, refer to [this example](https://stephenchou1017.github.io/scheduler/#/views).
+  Scheduler will render the resource view.
 - `showAgenda` is a bool value, if true, Scheduler will display the agenda view of current view type. Agenda view is
   read only.
 - `isEventPerspective` is a bool value, if true, Scheduler will display the task view of current view type. In
@@ -158,12 +150,9 @@ constructor(date=moment().format(DATE_FORMAT), viewType = ViewTypes.Week,
   every slot describes how many events a big task is divided into and who will make it done. Add a `groupId` and
   `groupName` property to every event object, so that the events having the same `groupId` will belong to the same big task and
   be rendered in the same slot in task view. If `groupId` and `groupName` are not provided, SchedulerData will take
-  the `id` as the `groupId`, and take the `title` as the `groupName`. See the `eventsForTaskView` in the
-  [DemoData.js](https://github.com/StephenChou1017/react-big-scheduler/blob/master/src/DemoData.js) for details.
-- `newConfig` is a config object, used to override the [default config](https://github.com/StephenChou1017/react-big-scheduler/blob/master/src/config.js)
-  fully or partly.
-- `newBehaviors` is a config object, used to override the [default behaviors](https://github.com/StephenChou1017/react-big-scheduler/blob/master/src/behaviors.js)
-  fully or partly.
+  the `id` as the `groupId`, and take the `title` as the `groupName`. 
+- `newConfig` is a config object, used to override the default config fully or partly.
+- `newBehaviors` is a config object, used to override the default behaviors fully or partly.
 - `localeMoment` is a locale moment object, which is unified used in react-big-scheduler. If not provided, Scheduler will come
   with English(en, United States) locale strings.
 
@@ -182,7 +171,6 @@ setResources(resources);
 ```
 
 Used to set the resources(the slots in resource view), make sure that there are no duplicated `resource.id` in the `resources`.
-See the demo `resources` in the [DemoData.js](https://github.com/StephenChou1017/react-big-scheduler/blob/master/src/DemoData.js).
 
 #### setEvents
 
@@ -191,9 +179,8 @@ setEvents(events);
 ```
 
 Used to set the events. the event array should be sorted in ascending order by event.start property.
-See the demo `events` in the [DemoData.js](https://github.com/StephenChou1017/react-big-scheduler/blob/master/src/DemoData.js).
-If we use the task view, we'd better add the `groupId` and the `groupName` property to each event object, see the
-`eventsForTaskView` in the [DemoData.js](https://github.com/StephenChou1017/react-big-scheduler/blob/master/src/DemoData.js) for details.
+
+If we use the task view, we'd better add the `groupId` and the `groupName` property to each event object.
 
 #### prev
 
@@ -284,9 +271,7 @@ Used to get minute steps in an hour, it equals 60 / SchedulerData.config.minuteS
 addResource(resource);
 ```
 
-Add the `resource` to the `SchedulerData.resources`, make sure that `resource.id` is not duplicated. Refer
-to [this example](https://stephenchou1017.github.io/scheduler/#/addresource).
-
+Add the `resource` to the `SchedulerData.resources`, make sure that `resource.id` is not duplicated.
 #### addEventGroup
 
 ```js
@@ -382,7 +367,7 @@ isEventInTimeWindow(eventStart, eventEnd, windowStart, windowEnd);
 Returns whether an event is in the time window or not, remind that `eventStart`, `eventEnd`, `windowStart`, `windowEnd`
 are all moment objects.
 
-### 2.Locale support(Refer to [this example](https://stephenchou1017.github.io/scheduler/#/locale) for details.)
+### 2.Locale support.
 
 #### SchedulerData.config.resourceName
 
@@ -414,9 +399,9 @@ The locale string of non-agenda view cell header format of other view types.
 
 #### SchedulerData.behaviors.getDateLabelFunc
 
-Used to resolve the locale string of date label of Scheduler component.(Refer to the [getDateLabel](https://github.com/StephenChou1017/react-big-scheduler/blob/master/src/behaviors.js) func for example)
+Used to resolve the locale string of date label of Scheduler component.
 
-### 3.SchedulerData.config(See the [config.js](https://github.com/StephenChou1017/react-big-scheduler/blob/master/src/config.js) for details.)
+### 3.SchedulerData.config.
 
 #### schedulerWidth
 
@@ -428,8 +413,7 @@ Scheduler will use responsive layout. And in the responsive layout:
 #### schedulerMaxHeight
 
 The max height of Scheduler. If the desired height is bigger than the max height, the header row of Scheduler will be
-frozen and vertical scroll bar will appear, but this won't happen when the max height is set to `0`. Refer
-to [this example](https://stephenchou1017.github.io/scheduler/#/freezefirstrow).
+frozen and vertical scroll bar will appear, but this won't happen when the max height is set to `0`.
 
 #### tableHeaderHeight
 
@@ -454,7 +438,6 @@ Width of Scheduler table cells in resource view and task view of different view 
 #### dayMaxEvents, weekMaxEvents, monthMaxEvents, yearMaxEvents, quarterMaxEvents
 
 Max events count of a cell in resource view and task view of different view types. A '+N more' will appear when exceeded.
-Refer to [this example](https://stephenchou1017.github.io/scheduler/#/addmore).
 
 #### eventItemHeight
 
@@ -487,7 +470,6 @@ Selected cells color in resource view and task view, cells are selectable only w
 #### nonWorkingTimeHeadColor
 
 Color of non-working time head cells. Modify `SchedulerData.behaviors.isNonWorkingTimeFunc` to re-define non-working time.
-Refer the `isNonWorkingTime` func in the [behaviors.js](https://github.com/StephenChou1017/react-big-scheduler/blob/master/src/behaviors.js).
 
 #### nonWorkingTimeHeadBgColor
 
@@ -500,8 +482,6 @@ Background color of non-working time body cells.
 #### summaryColor
 
 Color of cell summary. Modify `SchedulerData.behaviors.getSummaryFunc` to display summary in a cell.
-Refer the `getSummary` func in the [behaviors.js](https://github.com/StephenChou1017/react-big-scheduler/blob/master/src/behaviors.js).
-
 #### summaryPos
 
 Position of cell summary, supports `SummaryPos.Top`, `SummaryPos.TopRight`, `SummaryPos.TopLeft`, `SummaryPos.Bottom`,
@@ -531,13 +511,12 @@ Controls whether to create new event item in resource view and task view.
 #### crossResourceMove
 
 Controls whether to cross-slot move an event item in resource view and task view. If `false`, the `slotId` and `slotName`
-won't change in the `moveEvent` method. Refer to [this example](https://stephenchou1017.github.io/scheduler/#/nocrossslotmove).
+won't change in the `moveEvent` method.
 
 #### checkConflict
 
 Controls whether to check conflicts when creating, resizing or moving an event item in resource view and task view. If
-`true`, Scheduler will call the `conflictOccurred` function if given. Refer to
-[this example](https://stephenchou1017.github.io/scheduler/#/overlapcheck).
+`true`, Scheduler will call the `conflictOccurred` function if given.
 
 #### scrollToSpecialMomentEnabled
 
@@ -555,7 +534,7 @@ Controls Scheduler whether to display calendar popover when clicking on a date l
 
 #### recurringEventsEnabled
 
-Controls Scheduler whether to support recurring event, refer to [this feature request](https://github.com/StephenChou1017/react-big-scheduler/issues/8), default `true`.
+Controls Scheduler whether to support recurring event.
 If `true`, SchedulerData will filter out those template events who has a `rrule` string property in `setEvents` method,
 generate the recurring events in the time window, and insert them into the event array in the right orders. The recurring events
 generated from the same template event, all have a new id like `${templateEvent.id}-${number}`, and have a `recurringEventId`
@@ -581,7 +560,7 @@ Minute step for day view type in non-agenda view, can be 10, 12, 15, 20, 30, 60,
 
 Array of view that Scheduler will support.
 
-### 4.SchedulerData.behaviors(See the [behaviors.js](https://github.com/StephenChou1017/react-big-scheduler/blob/master/src/behaviors.js) for details.)
+### 4.SchedulerData.behaviors.
 
 #### getEventTextFunc
 
@@ -612,8 +591,7 @@ getSummary(
 );
 ```
 
-Method that defines the summary text displayed in the Scheduler cells.Refer
-to [this example](https://stephenchou1017.github.io/scheduler/#/summary).
+Method that defines the summary text displayed in the Scheduler cells.
 
 #### getCustomDateFunc
 
@@ -621,9 +599,7 @@ to [this example](https://stephenchou1017.github.io/scheduler/#/summary).
 getCustomDate(schedulerData, num, (date = undefined));
 ```
 
-Method that controls the start and end of time window when current view type is Custom, Custom1 or Custom2.Refer
-to [this example](https://stephenchou1017.github.io/scheduler/#/customtimewindow).
-
+Method that controls the start and end of time window when current view type is Custom, Custom1 or Custom2.
 #### getNonAgendaViewBodyCellBgColorFunc
 
 ```js
@@ -744,9 +720,7 @@ leftCustomHeader: PropTypes.object;
 rightCustomHeader: PropTypes.object;
 ```
 
-Component you need to put in the Scheduler header, it could be a div or a react component. Refer
-to [this example](https://stephenchou1017.github.io/scheduler/#/customheader).
-
+Component you need to put in the Scheduler header, it could be a div or a react component.
 #### conflictOccurred
 
 ```js
@@ -782,7 +756,7 @@ eventItemTemplateResolver(
 );
 ```
 
-Use this function, you can customize the event style. Refer to [this example](https://stephenchou1017.github.io/scheduler/#/customeventstyle).
+Use this function, you can customize the event style.
 
 ### eventItemPopoverTemplateResolver
 
@@ -798,7 +772,7 @@ eventItemPopoverTemplateResolver(
 );
 ```
 
-Use this function, you can customize the event's popover style. Refer to [this example](https://stephenchou1017.github.io/scheduler/#/custompopover).
+Use this function, you can customize the event's popover style.
 
 #### slotItemTemplateResolver
 
@@ -821,7 +795,7 @@ nonAgendaCellHeaderTemplateResolver(
 );
 ```
 
-Use this function, you can customize the table header cell style. Refer to [this example](https://stephenchou1017.github.io/scheduler/#/customtableheaders).
+Use this function, you can customize the table header cell style.
 
 #### onScrollLeft, onScrollRight
 
@@ -832,7 +806,7 @@ onScrollRight: PropTypes.func;
 onScrollRight(schedulerData, schedulerContent, maxScrollLeft);
 ```
 
-Callback function fired when the scheduler content div scrolls to leftmost or rightmost. Refer to [this example](https://stephenchou1017.github.io/scheduler/#/infinitescroll).
+Callback function fired when the scheduler content div scrolls to leftmost or rightmost.
 
 #### onScrollTop, onScrollBottom
 
@@ -843,7 +817,7 @@ onScrollBottom: PropTypes.func;
 onScrollBottom(schedulerData, schedulerContent, maxScrollTop);
 ```
 
-Callback function fired when the scheduler content div scrolls to topmost or bottommost. Refer to [this example](https://stephenchou1017.github.io/scheduler/#/infinitescroll).
+Callback function fired when the scheduler content div scrolls to topmost or bottommost.
 
 #### slotClickedFunc
 
@@ -851,18 +825,14 @@ Callback function fired when the scheduler content div scrolls to topmost or bot
 slotClickedFunc: PropTypes.func;
 ```
 
-If it's set, slots will be clickable, and will fire this function when a slot is clicked. Refer
-to [this example](https://stephenchou1017.github.io/scheduler/#/resourceclickable).
-
+If it's set, slots will be clickable, and will fire this function when a slot is clicked.
 #### dndSources
 
 ```js
 dndSources: PropTypes.array;
 ```
 
-DnDSource array that registered to Scheduler. Use [DnDSource](https://github.com/StephenChou1017/react-big-scheduler/blob/master/src/DnDSource.js),
-we can simplify the drag and drop coding in React-Big-Scheduler. Refer
-to [this example](https://stephenchou1017.github.io/scheduler/#/draganddrop).
+DnDSource array that registered to Scheduler.
 
 #### onSetAddMoreState
 
@@ -872,9 +842,7 @@ onSetAddMoreState(newState);
 ```
 
 Callback function fired when a '+N more' is clicked, is used to control the visibility and the position of the `AddMorePopover`.
-`newState` is a json such as {headerItem: headerItem, left: 20, top: 20, height: 100}. Refer
-to [this example](https://stephenchou1017.github.io/scheduler/#/addmore).
-
+`newState` is a json such as {headerItem: headerItem, left: 20, top: 20, height: 100}.
 #### subtitleGetter
 
 ```js

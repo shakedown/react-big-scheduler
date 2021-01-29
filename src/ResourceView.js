@@ -62,7 +62,7 @@ class ResourceView extends Component {
                     slotItem = temp;
             }
 
-            let tdStyle = {height: item.rowHeight};
+            let tdStyle = {height: item.rowHeight, backgroundColor: 'blue', 'border-color': 'black'};
             if(item.groupOnly) {
                 tdStyle = {
                     ...tdStyle,
