@@ -1,6 +1,6 @@
 {
   "name": "scheduler-react",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A scheduler and resource planning component built for React and made for modern browsers (IE10+)",
   "keywords": [
     "scheduler",
@@ -17,7 +17,10 @@
     "CHANGELOG.md"
   ],
   "main": "lib/index",
-
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hiramzamorano/react-big-scheduler.git"
+  },
   "license": "MIT",
   "config": {},
   "scripts": {
