@@ -1,7 +1,7 @@
 {
   "name": "scheduler-react",
   "version": "1.0.4",
-  "description": "A scheduler and resource planning component built for React and made for modern browsers (IE10+)",
+  "description": "A scheduler and resource planning component built for React",
   "keywords": [
     "scheduler",
     "react-component",
