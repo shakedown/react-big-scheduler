@@ -64,7 +64,7 @@ class ResourceView extends Component {
                     slotItem = temp;
             }
 
-            let tdStyle = {height: item.rowHeight};
+            let tdStyle = {height: item.rowHeight, whiteSpace: 'pre-wrap' };
             if(item.groupOnly) {
                 tdStyle = {
                     ...tdStyle,

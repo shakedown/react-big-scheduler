@@ -50,10 +50,10 @@ class AuthorView extends Component {
                     
             let a = slotClickedFunc != undefined ? <span className="slot-cell">{indents}<a className="slot-text" onClick={() => {
                 slotClickedFunc(schedulerData, item);
-            }}>{item.slotAuthor}</a></span>
-                : <span className="slot-cell">{indents}<span className="slot-text">{item.slotAuthor}</span></span>;
+            }}>{item.slotAuthor? item.slotAuthor : 'No Assignee'}</a></span>
+                : <span className="slot-cell">{indents}<span className="slot-text">{item.slotAuthor? item.slotAuthor : 'No Assignee'}</span></span>;
             let slotItem = (
-                <div title={item.slotAuthor} className="overflow-text header2-text" style={{textAlign: "left"}}>
+                <div title={item.slotAuthor? item.slotAuthor : 'No Assignee'} className="overflow-text header2-text" style={{textAlign: "left"}}>
                     {a}
                 </div>
             );

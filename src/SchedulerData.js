@@ -815,7 +815,7 @@ export default class SchedulerData {
                 console.error(`Resource undefined: ${index}`);
                 throw new Error(`Resource undefined: ${index}`);
             }
-            if(item.id == undefined || item.name == undefined || item.author == undefined)
+            if(item.id == undefined || item.name == undefined)
             {
                 console.error('Resource property missed', index, item);
                 throw new Error(`Resource property undefined: ${index}`);

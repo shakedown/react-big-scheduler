@@ -3,7 +3,6 @@ const DemoData = {
         {
             id: 'r0',
             name: 'Resource0',
-            author: "Hiram",
         },
         {
             id: 'r1',
@@ -37,7 +36,7 @@ const DemoData = {
         },
         {
             id: 'r7',
-            name: 'Resource7Resource7Resource7Resource7Resource7',
+            name: 'Resource7Resource7',
             author: "Federico Osorio"
         }
     ],

@@ -25,26 +25,31 @@ let resources = [
                     {
                        id: 'r0',
                        name: 'Resource0',
-                       groupOnly: true
+                       groupOnly: true,
+                       author: 'X'
                     },
                     {
                        id: 'r1',
-                       name: 'Resource1'
+                       name: 'Resource1',
+                       author: 'X1'
                     },
                     {
                        id: 'r2',
                        name: 'Resource2',
-                       parentId: 'r0'
+                       parentId: 'r0',
+                       author: 'X2'
                     },
                     {
                        id: 'r3',
                        name: 'Resource3',
-                       parentId: 'r4'
+                       parentId: 'r4',
+                       author: 'X3'
                     },
                     {
                        id: 'r4',
                        name: 'Resource4',
-                       parentId: 'r2'
+                       parentId: 'r2',
+                       author: 'X4'
                     },
                 ];
 schedulerData.setResources(resources);
