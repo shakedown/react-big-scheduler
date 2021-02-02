@@ -1,6 +1,6 @@
 {
   "name": "scheduler-react",
-  "version": "2.0.4",
+  "version": "2.0.6",
   "description": "A scheduler and resource planning component built for React",
   "keywords": [
     "scheduler",
