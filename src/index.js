@@ -203,7 +203,7 @@ class Scheduler extends Component {
                 contentHeight = this.state.contentHeight;
             let resourcePaddingBottom = resourceScrollbarHeight === 0 ? contentScrollbarHeight : 0;
             let contentPaddingBottom = contentScrollbarHeight === 0 ? resourceScrollbarHeight : 0;
-            let schedulerContentStyle = {overflow: 'auto', margin: "0px", position: "relative", paddingBottom: contentPaddingBottom};
+            let schedulerContentStyle = {overflow: 'auto', margin: "0px", position: "relative", paddingBottom: contentPaddingBottom, backgroundColor: '#F1F1F1'};
             let resourceContentStyle = {border: "1px solid #e9e9e9", overflowWrap: 'break-word', width: resourceTableWidth + resourceScrollbarWidth - 2, margin: `0px -${contentScrollbarWidth}px 0px 0px`};
             let authorContentStyle = {border: "1px solid #e9e9e9", overflowX: "auto", overflowY: "auto", width: resourceTableWidth + resourceScrollbarWidth - 2, margin: `0px -${contentScrollbarWidth}px 0px 0px`};
             if (config.schedulerMaxHeight > 0) {
@@ -244,8 +244,8 @@ class Scheduler extends Component {
                             </div>
                         </div>
                     </td>
-                    <td style={{width: resourceTableWidth, verticalAlign: 'top'}}>
-                        <div className="resource-view">
+                    <td style={{width: ((resourceTableWidth)/2), verticalAlign: 'top'}}>
+                        <div className="author-view">
                             <div style={{overflow: "hidden", borderBottom: "1px solid #e9e9e9", height: config.tableHeaderHeight}}>
                                 <div style={{overflowX: "scroll", overflowY: "hidden", margin: `0px 0px -${contentScrollbarHeight}px`}}>
                                     <table className="resource-table">
