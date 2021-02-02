@@ -3,38 +3,42 @@ const DemoData = {
         {
             id: 'r0',
             name: 'Resource0',
-            groupOnly: true,
+            author: "Hiram",
         },
         {
             id: 'r1',
             name: 'Resource1',
-            parentId: 'r0',
+            author: "Hiram test"
         },
         {
             id: 'r2',
             name: 'Resource2',
-            parentId: 'r3',
+            author: "Hiram test 3"
         },
         {
             id: 'r3',
             name: 'Resource3',
-            parentId: 'r1',
+            author: "Federico Osorio"
         },
         {
             id: 'r4',
             name: 'Resource4',
+            author: "Federico Osorio"
         },
         {
             id: 'r5',
             name: 'Resource5',
+            author: "Federico Osorio"
         },
         {
             id: 'r6',
             name: 'Resource6',
+            author: "Federico Osorio"
         },
         {
             id: 'r7',
             name: 'Resource7Resource7Resource7Resource7Resource7',
+            author: "Federico Osorio"
         }
     ],
     events: [

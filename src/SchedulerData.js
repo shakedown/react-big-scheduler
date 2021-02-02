@@ -287,6 +287,7 @@ export default class SchedulerData {
 
     getResourceTableWidth() {
         let resourceTableConfigWidth = this.getResourceTableConfigWidth();
+        console.log(resourceTableConfigWidth, 'resourceTableConfigWidth');
         let schedulerWidth = this.getSchedulerWidth();
         let resourceTableWidth = this.isResourceViewResponsive() ? parseInt(schedulerWidth * Number(resourceTableConfigWidth.slice(0,-1)) / 100)
             : resourceTableConfigWidth;
@@ -434,7 +435,7 @@ export default class SchedulerData {
     getResourceTableConfigWidth() {
         if(this.showAgenda) return this.config.agendaResourceTableWidth;
 
-        return this.viewType === ViewTypes.Week ? this.config.weekResourceTableWidth : (
+        return this.viewType === ViewTypes.Week ? ((this.config.weekResourceTableWidth)/2) : (
             this.viewType === ViewTypes.Day ? this.config.dayResourceTableWidth : (
                 this.viewType === ViewTypes.Month ? this.config.monthResourceTableWidth : (
                     this.viewType === ViewTypes.Year ? this.config.yearResourceTableWidth : (
@@ -714,6 +715,7 @@ export default class SchedulerData {
             let slotRenderData = {
                 slotId: slot.id,
                 slotName: slot.name,
+                slotAuthor: slot.author,
                 parentId: slot.parentId,
                 groupOnly: slot.groupOnly,
                 hasSummary: false,
@@ -814,7 +816,7 @@ export default class SchedulerData {
                 console.error(`Resource undefined: ${index}`);
                 throw new Error(`Resource undefined: ${index}`);
             }
-            if(item.id == undefined || item.name == undefined)
+            if(item.id == undefined || item.name == undefined || item.author == undefined)
             {
                 console.error('Resource property missed', index, item);
                 throw new Error(`Resource property undefined: ${index}`);

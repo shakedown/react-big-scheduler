@@ -24,6 +24,7 @@ class ResourceView extends Component {
         let width = schedulerData.getResourceTableWidth() - 2;
         let paddingBottom = contentScrollbarHeight;
         let displayRenderData = renderData.filter(o => o.render);
+
         let resourceList = displayRenderData.map((item) => {
             let indents = [];
             for(let i=0;i<item.indent;i++) {
@@ -56,13 +57,14 @@ class ResourceView extends Component {
                     {a}
                 </div>
             );
+
             if(!!slotItemTemplateResolver) {
                 let temp = slotItemTemplateResolver(schedulerData, item, slotClickedFunc, width, "overflow-text header2-text");
                 if(!!temp)
                     slotItem = temp;
             }
 
-            let tdStyle = {height: item.rowHeight, backgroundColor: 'blue', 'border-color': 'black'};
+            let tdStyle = {height: item.rowHeight};
             if(item.groupOnly) {
                 tdStyle = {
                     ...tdStyle,
