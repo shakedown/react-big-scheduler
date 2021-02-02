@@ -13,7 +13,7 @@ const DemoData = {
         {
             id: 'r2',
             name: 'Resource2',
-            author: "Hiram test 3"
+            author: "Hiram test"
         },
         {
             id: 'r3',

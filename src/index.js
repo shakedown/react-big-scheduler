@@ -181,7 +181,6 @@ class Scheduler extends Component {
         }
         else {
             let resourceTableWidth = schedulerData.getResourceTableWidth();
-            console.log(resourceTableWidth, 'resourceTableWidth');
             let schedulerContainerWidth = width - resourceTableWidth + 1;
             let schedulerWidth = schedulerData.getContentTableWidth() - 1;
             let DndResourceEvents = this.state.dndContext.getDropTarget();
@@ -205,7 +204,7 @@ class Scheduler extends Component {
             let resourcePaddingBottom = resourceScrollbarHeight === 0 ? contentScrollbarHeight : 0;
             let contentPaddingBottom = contentScrollbarHeight === 0 ? resourceScrollbarHeight : 0;
             let schedulerContentStyle = {overflow: 'auto', margin: "0px", position: "relative", paddingBottom: contentPaddingBottom};
-            let resourceContentStyle = {border: "1px solid #e9e9e9", 'overflow-wrap': 'break-word', width: resourceTableWidth + resourceScrollbarWidth - 2, margin: `0px -${contentScrollbarWidth}px 0px 0px`};
+            let resourceContentStyle = {border: "1px solid #e9e9e9", overflowWrap: 'break-word', width: resourceTableWidth + resourceScrollbarWidth - 2, margin: `0px -${contentScrollbarWidth}px 0px 0px`};
             let authorContentStyle = {border: "1px solid #e9e9e9", overflowX: "auto", overflowY: "auto", width: resourceTableWidth + resourceScrollbarWidth - 2, margin: `0px -${contentScrollbarWidth}px 0px 0px`};
             if (config.schedulerMaxHeight > 0) {
                 schedulerContentStyle = {
