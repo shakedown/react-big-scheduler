@@ -434,7 +434,7 @@ export default class SchedulerData {
     getResourceTableConfigWidth() {
         if(this.showAgenda) return this.config.agendaResourceTableWidth;
 
-        return this.viewType === ViewTypes.Week ? ((this.config.weekResourceTableWidth)/2) : (
+        return this.viewType === ViewTypes.Week ? this.config.weekResourceTableWidth : (
             this.viewType === ViewTypes.Day ? this.config.dayResourceTableWidth : (
                 this.viewType === ViewTypes.Month ? this.config.monthResourceTableWidth : (
                     this.viewType === ViewTypes.Year ? this.config.yearResourceTableWidth : (

@@ -52,7 +52,6 @@ class HeaderView extends Component {
                             </th>
                         );
                     }
-
                     headerList.push(element);
                 }
             })

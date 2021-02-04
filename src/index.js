@@ -218,7 +218,7 @@ class Scheduler extends Component {
             }
 
             let resourceName = schedulerData.isEventPerspective ? config.taskName : config.resourceName;
-            let authorName = schedulerData.isEventPerspective ? config.taskName : config.authorName;
+
             tbodyContent = (
                 <tr>
                     <td style={{width: resourceTableWidth, verticalAlign: 'top'}}>
@@ -228,7 +228,7 @@ class Scheduler extends Component {
                                     <table className="resource-table">
                                         <thead>
                                         <tr style={{height: config.tableHeaderHeight}}>
-                                            <th className="header3-text">
+                                            <th className="header3-issues">
                                                 {resourceName}
                                             </th>
                                         </tr>
@@ -244,7 +244,7 @@ class Scheduler extends Component {
                             </div>
                         </div>
                     </td>
-                    <td style={{width: ((resourceTableWidth)/2), verticalAlign: 'top'}}>
+                    {/* <td style={{width: ((resourceTableWidth)/2), verticalAlign: 'top'}}>
                         <div className="author-view">
                             <div style={{overflow: "hidden", borderBottom: "1px solid #e9e9e9", height: config.tableHeaderHeight}}>
                                 <div style={{overflowX: "scroll", overflowY: "hidden", margin: `0px 0px -${contentScrollbarHeight}px`}}>
@@ -266,7 +266,7 @@ class Scheduler extends Component {
                                 />
                             </div>
                         </div>
-                    </td>
+                    </td> */}
                     <td>
                         <div className="scheduler-view" style={{width: schedulerContainerWidth, verticalAlign: 'top'}}>
                             <div style={{overflow: "hidden", borderBottom: "1px solid #e9e9e9", height: config.tableHeaderHeight}}>
@@ -279,7 +279,7 @@ class Scheduler extends Component {
                                 </div>
                             </div>
                             <div style={schedulerContentStyle} ref={this.schedulerContentRef} onMouseOver={this.onSchedulerContentMouseOver} onMouseOut={this.onSchedulerContentMouseOut} onScroll={this.onSchedulerContentScroll} >
-                                <div style={{width: schedulerWidth, height: contentHeight}}>
+                                <div style={{width: schedulerWidth, height: contentHeight, textAlign:'center'}}>
                                     <div className="scheduler-content">
                                         <table className="scheduler-content-table" >
                                             <tbody>
@@ -308,7 +308,7 @@ class Scheduler extends Component {
                     {leftCustomHeader}
                     <Col>
                         <div className='header2-text'>
-                            <Icon type="left" style={{marginRight: "8px"}} className="icon-nav"
+                            <Icon type="caret-left" style={{color: '#CACCCD', marginRight: "8px"}} className="icon-nav"
                                     onClick={this.goBack}/>
                             {
                             calendarPopoverEnabled
@@ -316,11 +316,11 @@ class Scheduler extends Component {
                                 <Popover content={popover} placement="bottom" trigger="click"
                                         visible={this.state.visible}
                                         onVisibleChange={this.handleVisibleChange}>
-                                <span className={'header2-text-label'} style={{cursor: 'pointer'}}>{dateLabel}</span>
+                                <span className={'header2-text-label'} style={{ fontWeight:'bold', cursor: 'pointer'}}>{dateLabel}</span>
                                 </Popover>
                                 : <span className={'header2-text-label'}>{dateLabel}</span>
                             }
-                            <Icon type="right" style={{marginLeft: "8px"}} className="icon-nav"
+                            <Icon type="caret-right" style={{color: '#CACCCD', marginLeft: "8px"}} className="icon-nav"
                                     onClick={this.goNext}/>
                         </div>
                     </Col>

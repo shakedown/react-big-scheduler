@@ -53,9 +53,15 @@ class ResourceView extends Component {
             }}>{item.slotName}</a></span>
                 : <span className="slot-cell">{indents}<span className="slot-text">{item.slotName}</span></span>;
             let slotItem = (
-                <div title={item.slotName} className="overflow-text header2-text" style={{textAlign: "left"}}>
+                <div>
+                    <div title={item.slotName} className="overflow-text header2-text" style={{textAlign: "left"}}>
                     {a}
+                     </div>
+                     <div className="overflow-text header2-text" style={{textAlign: "left"}}>
+                         <span className=' overflow-text header3-text'>Assignee:</span> {item.slotAuthor ? item.slotAuthor : 'Unassignee'}
+                    </div>
                 </div>
+                 
             );
 
             if(!!slotItemTemplateResolver) {
@@ -64,7 +70,7 @@ class ResourceView extends Component {
                     slotItem = temp;
             }
 
-            let tdStyle = {height: item.rowHeight, whiteSpace: 'pre-wrap' };
+            let tdStyle = { height: item.rowHeight, whiteSpace: 'pre-wrap' };
             if(item.groupOnly) {
                 tdStyle = {
                     ...tdStyle,
@@ -75,7 +81,9 @@ class ResourceView extends Component {
             return (
                 <tr key={item.slotId}>
                     <td data-resource-id={item.slotId} style={tdStyle}>
-                        {slotItem}
+                        <div>
+                             {slotItem}
+                        </div>
                     </td>
                 </tr>
             );

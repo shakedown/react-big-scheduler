@@ -5,11 +5,23 @@
 }
 
 .header2-text {
+    padding-left: 1vw;
+    padding-bottom: 1vw;
     font-size: 14px;
     font-weight: 500;
 }
 
+.header2-text-label {
+    
+}
+
 .header3-text {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.header3-issues {
+    background-color:#F1F1F1;
     font-size: 12px;
     font-weight: bold;
 }

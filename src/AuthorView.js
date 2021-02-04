@@ -21,7 +21,7 @@ class AuthorView extends Component {
         const {schedulerData, contentScrollbarHeight, slotClickedFunc, slotItemTemplateResolver, toggleExpandFunc} = this.props;
         const {renderData} = schedulerData;
 
-        let width = ((schedulerData.getResourceTableWidth() - 2)/2);
+        let width = schedulerData.getResourceTableWidth();
         let paddingBottom = contentScrollbarHeight;
         let displayRenderData = renderData.filter(o => o.render);
 
