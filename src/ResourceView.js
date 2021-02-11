@@ -19,13 +19,18 @@ class ResourceView extends Component {
     render() {
 
         const {schedulerData, contentScrollbarHeight, slotClickedFunc, slotItemTemplateResolver, toggleExpandFunc} = this.props;
-        const {renderData} = schedulerData;
+        const {renderData, config} = schedulerData;
 
         let width = schedulerData.getResourceTableWidth() - 2;
         let paddingBottom = contentScrollbarHeight;
         let displayRenderData = renderData.filter(o => o.render);
 
         let resourceList = displayRenderData.map((item) => {
+            let bgColor = config.defaultEventBgColor;
+            if (!!item.slotColor){
+                bgColor = item.slotColor;
+            }
+            
             let indents = [];
             for(let i=0;i<item.indent;i++) {
                 indents.push(<span key={`es${i}`} className="expander-space"></span>);
@@ -55,6 +60,9 @@ class ResourceView extends Component {
             let slotItem = (
                 <div>
                     <div title={item.slotName} className="overflow-text header2-text" style={{textAlign: "left"}}>
+                    <div className="overflow-text header2-text" style={{textAlign: "left", color: '#F08421', fontSize: '14px'}}>
+                         {item.slotIssue ? item.slotIssue : ''}
+                    </div>
                     {a}
                      </div>
                      <div className="overflow-text header2-text" style={{textAlign: "left"}}>
@@ -74,14 +82,14 @@ class ResourceView extends Component {
             if(item.groupOnly) {
                 tdStyle = {
                     ...tdStyle,
-                    backgroundColor: schedulerData.config.groupOnlySlotColor
+                    backgroundColor: schedulerData.config.groupOnlySlotColor,
                 };
             }
 
             return (
                 <tr key={item.slotId}>
                     <td data-resource-id={item.slotId} style={tdStyle}>
-                        <div>
+                        <div style={{borderLeft: `6px solid ${bgColor}`}}>
                              {slotItem}
                         </div>
                     </td>

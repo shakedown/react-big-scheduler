@@ -11,6 +11,9 @@ class CustomHeaders extends Component {
 
     let schedulerData = new SchedulerData(Date.now(), ViewTypes.Week, false, false, {
       calendarPopoverEnabled: false,
+      project: 'Project Name', 
+      projectUrl: 'www.test.com',
+      projectImage: 'icon url'
     });
     schedulerData.localeMoment.locale('en');
     schedulerData.setResources(DemoData.resources);

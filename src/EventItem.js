@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {PropTypes} from 'prop-types'
 import Popover from 'antd/lib/popover'
 import 'antd/lib/popover/style/index.css'
+import Icon from 'antd/lib/icon'
 import EventItemPopover from './EventItemPopover'
 import {CellUnits, DATETIME_FORMAT} from './index'
 import {DnDTypes} from './DnDTypes'
@@ -504,13 +505,15 @@ class EventItem extends Component {
         let eventItemTemplate = (
             <div className={roundCls + ' event-item'} key={eventItem.id}
                  style={{height: config.eventItemHeight, backgroundColor: bgColor}}>
-                <span style={{marginLeft: '10px', lineHeight: `${config.eventItemHeight}px` }}>{eventTitle}</span>
+                     <span style={{marginLeft: '10px', lineHeight: `${config.eventItemHeight}px` }}>X days</span>
+                <span style={{marginLeft: '30px', lineHeight: `${config.eventItemHeight}px` }}>{eventTitle}</span>
+                <Icon type="instagram" style={{fontSize:'18px', marginLeft: '40px', lineHeight: `${config.eventItemHeight}px` }} /> 
             </div>
         );
         if(eventItemTemplateResolver != undefined)
             eventItemTemplate = eventItemTemplateResolver(schedulerData, eventItem, bgColor, isStart, isEnd, 'event-item', config.eventItemHeight, undefined);
 
-        let a = <a className="timeline-event" style={{left: left, width: width, top: top}} onClick={() => { if(!!eventItemClick) eventItemClick(schedulerData, eventItem);}}>
+        let a = <a className="timeline-event" style={{left: left, width: width, top: '35%'}} onClick={() => { if(!!eventItemClick) eventItemClick(schedulerData, eventItem);}}>
             {eventItemTemplate}
             {startResizeDiv}
             {endResizeDiv}

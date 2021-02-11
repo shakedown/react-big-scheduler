@@ -7,12 +7,16 @@ export default {
     schedulerMaxHeight: 0,
     tableHeaderHeight: 40,
 
+    project: 'Set ProjectName',
+    projectUrl: '',
+    projectImage: 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y',
+
     agendaResourceTableWidth: 160,
     agendaMaxEventWidth: 100,
 
     dayResourceTableWidth: 160,
     weekResourceTableWidth: '16%',
-    monthResourceTableWidth: 160,
+    monthResourceTableWidth: '20%',
     quarterResourceTableWidth: 160,
     yearResourceTableWidth: 160,
     customResourceTableWidth: 160,
@@ -31,7 +35,7 @@ export default {
     yearMaxEvents: 99,
     customMaxEvents: 99,
 
-    eventItemHeight: 22,
+    eventItemHeight: 32,
     eventItemLineHeight: 100,
     nonAgendaSlotMinHeight: 0,
     dayStartFrom: 0,
@@ -67,7 +71,8 @@ export default {
     addMorePopoverHeaderFormat: 'MMM D, YYYY dddd',
     eventItemPopoverDateFormat: 'MMM D',
     nonAgendaDayCellHeaderFormat: 'ha',
-    nonAgendaOtherCellHeaderFormat: 'ddd M/D',
+    nonAgendaOtherCellHeaderFormat: 'D',
+    nonAgendaOtherCellHeaderFormatDay: 'ddd',
 
     minuteStep: 30,
 

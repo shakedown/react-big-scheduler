@@ -1,6 +1,7 @@
 # scheduler-react ![npm](https://img.shields.io/npm/v/scheduler-react.svg?style=plastic)
 
 A scheduler and resource planning component built for React.
+![Alt text](project-image.png?raw=true "Title")
 
 Inspired by [Full Calendar Scheduler](https://fullcalendar.io/scheduler/).
 ## Use and Setup

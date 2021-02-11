@@ -707,6 +707,7 @@ export default class SchedulerData {
         let slotTree = [],
             slotMap = new Map();
         slots.forEach((slot) => {
+            console.log(slot, 'SLOOT');
             let headerEvents = headers.map((header) => {
                 return this._createInitHeaderEvents(header);
             });
@@ -715,6 +716,8 @@ export default class SchedulerData {
                 slotId: slot.id,
                 slotName: slot.name,
                 slotAuthor: slot.author,
+                slotColor: slot.bgColor,
+                slotIssue: slot.issue,
                 parentId: slot.parentId,
                 groupOnly: slot.groupOnly,
                 hasSummary: false,

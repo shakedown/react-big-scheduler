@@ -164,7 +164,6 @@ class Scheduler extends Component {
         const { renderData, viewType, showAgenda, isEventPerspective, config } = schedulerData;
         const width = schedulerData.getSchedulerWidth();
         const calendarPopoverEnabled = config.calendarPopoverEnabled;
-
         let dateLabel = schedulerData.getDateLabel();
         let defaultValue = `${viewType}${showAgenda ? 1 : 0}${isEventPerspective ? 1 : 0}`;
         let radioButtonList = config.views.map(item => {
@@ -205,7 +204,6 @@ class Scheduler extends Component {
             let contentPaddingBottom = contentScrollbarHeight === 0 ? resourceScrollbarHeight : 0;
             let schedulerContentStyle = {overflow: 'auto', margin: "0px", position: "relative", paddingBottom: contentPaddingBottom, backgroundColor: '#F1F1F1'};
             let resourceContentStyle = {border: "1px solid #e9e9e9", overflowWrap: 'break-word', width: resourceTableWidth + resourceScrollbarWidth - 2, margin: `0px -${contentScrollbarWidth}px 0px 0px`};
-            let authorContentStyle = {border: "1px solid #e9e9e9", overflowX: "auto", overflowY: "auto", width: resourceTableWidth + resourceScrollbarWidth - 2, margin: `0px -${contentScrollbarWidth}px 0px 0px`};
             if (config.schedulerMaxHeight > 0) {
                 schedulerContentStyle = {
                     ...schedulerContentStyle,
@@ -244,29 +242,6 @@ class Scheduler extends Component {
                             </div>
                         </div>
                     </td>
-                    {/* <td style={{width: ((resourceTableWidth)/2), verticalAlign: 'top'}}>
-                        <div className="author-view">
-                            <div style={{overflow: "hidden", borderBottom: "1px solid #e9e9e9", height: config.tableHeaderHeight}}>
-                                <div style={{overflowX: "scroll", overflowY: "hidden", margin: `0px 0px -${contentScrollbarHeight}px`}}>
-                                    <table className="resource-table">
-                                        <thead>
-                                        <tr style={{height: config.tableHeaderHeight}}>
-                                            <th className="header3-text">
-                                                 {authorName}
-                                            </th>
-                                        </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-                            </div>
-                            <div style={authorContentStyle} ref={this.schedulerResourceRef} onMouseOver={this.onSchedulerResourceMouseOver} onMouseOut={this.onSchedulerResourceMouseOut} onScroll={this.onSchedulerResourceScroll}>
-                                <AuthorView
-                                    {...this.props}
-                                    contentScrollbarHeight={resourcePaddingBottom}
-                                />
-                            </div>
-                        </div>
-                    </td> */}
                     <td>
                         <div className="scheduler-view" style={{width: schedulerContainerWidth, verticalAlign: 'top'}}>
                             <div style={{overflow: "hidden", borderBottom: "1px solid #e9e9e9", height: config.tableHeaderHeight}}>
@@ -301,12 +276,30 @@ class Scheduler extends Component {
         };
 
         let popover = <div className="popover-calendar"><Calendar fullscreen={false} onSelect={this.onSelect}/></div>;
+        let resourceTableWidth = schedulerData.getResourceTableWidth();
+        const project = config.project;
+        const projectImg = config.projectImage;
+        const projectUrl = config.projectUrl;
         let schedulerHeader = <div />;
         if(config.headerEnabled) {
             schedulerHeader = (
-                <Row type="flex" align="middle" justify="space-between" style={{marginBottom: '24px'}}>
+                <Row type="flex" align="middle" justify="space-between" style={{ border: '2px solid #e9e9e9', paddingRight: '10px'}}>
                     {leftCustomHeader}
                     <Col>
+                    <div style={{width: resourceTableWidth, borderRight: '2px solid #e9e9e9', textAlign: 'center'}}>
+                        <div className="container-grid">
+                        <div className="image-header" style={{ backgroundImage: `url(${projectImg})`}}></div>
+                        <div className="wrapper-header">
+                        <div className="text-header">{project}</div>
+                        <div className="text-header2">Project</div>
+                        <a className="text-header-link" href={projectUrl} target="_blank">Open in Gitlab</a>
+                        </div>
+                        <Icon type="more" style={{alignItems: 'flex-start', marginRight: "8px"}} className="icon-header"/>
+                        </div>
+                    </div>
+                    </Col>
+                    <Col>
+                    <div className="header-col2">
                         <div className='header2-text'>
                             <Icon type="caret-left" style={{color: '#CACCCD', marginRight: "8px"}} className="icon-nav"
                                     onClick={this.goBack}/>
@@ -323,9 +316,10 @@ class Scheduler extends Component {
                             <Icon type="caret-right" style={{color: '#CACCCD', marginLeft: "8px"}} className="icon-nav"
                                     onClick={this.goNext}/>
                         </div>
+                        </div>
                     </Col>
                     <Col>
-                        <RadioGroup defaultValue={defaultValue} size="default" onChange={this.onViewChange}>
+                        <RadioGroup style={{alignItems: 'flex-end', marginRight: "8px"}} defaultValue={defaultValue} size="default" onChange={this.onViewChange}>
                             {radioButtonList}
                         </RadioGroup>
                     </Col>

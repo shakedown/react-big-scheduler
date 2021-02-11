@@ -3,41 +3,52 @@ const DemoData = {
         {
             id: 'r0',
             name: 'Resource0',
+            bgColor: 'red',
+            issue: '#15'
         },
         {
             id: 'r1',
             name: 'Resource1',
-            author: "Hiram test"
+            author: "Hiram test",
+            bgColor: '#D9D9D9',
+            issue: '#1'
         },
         {
             id: 'r2',
             name: 'Resource2',
-            author: "Hiram test"
+            author: "Hiram test",
+            issue: '#99'
         },
         {
             id: 'r3',
             name: 'Resource3',
-            author: "Federico Osorio"
+            author: "Federico Osorio",
+            issue: '#645'
         },
         {
             id: 'r4',
             name: 'Resource4',
-            author: "Federico Osorio"
+            author: "Federico Osorio",
+            issue: '#33'
         },
         {
             id: 'r5',
             name: 'Resource5',
-            author: "Federico Osorio"
+            author: "Federico Osorio",
+            issue: '#7'
         },
         {
             id: 'r6',
             name: 'Resource6',
-            author: "Federico Osorio"
+            author: "Federico Osorio",
+            issue: '#32'
         },
         {
             id: 'r7',
             name: 'Resource7Resource7',
-            author: "Federico Osorio"
+            author: "Federico Osorio",
+            bgColor: '#FA9E95',
+            issue: '#20'
         }
     ],
     events: [
