@@ -23,7 +23,7 @@ class CustomHeaders extends Component {
     }
   }
 
-    nonAgendaCellHeaderTemplateResolver = (schedulerData, item, formattedDateItems, style) => {
+    nonAgendaCellHeaderTemplateResolver = (schedulerData, item, formattedDateItems, pFormattedListDay, style) => {
       let datetime = schedulerData.localeMoment(item.time);
       let isCurrentDate = false;
 
@@ -38,15 +38,22 @@ class CustomHeaders extends Component {
           style.backgroundColor = '#118dea';
           style.color = 'white';
       }
+      const pList = formattedDateItems.map((item, index) => (
+        <div key={index}>{item}</div>
+    ));
+
+    const pListDay = pFormattedListDay.map((item, index) => (
+        <div key={index}>{item}</div>
+    ));
 
       return (
           <th key={item.time} className={`header3-text`} style={style}>
-              {
-                  formattedDateItems.map((formattedItem, index) => (
-                      <div key={index}
-                           dangerouslySetInnerHTML={{__html: formattedItem.replace(/[0-9]/g, '<b>$&</b>')}}/>
-                  ))
-              }
+              <div>
+                {pListDay}
+              </div>
+              <div className="headerDate-text">
+                {pList}
+              </div>
           </th>
       );
   }

@@ -36,18 +36,26 @@ class HeaderView extends Component {
                     let pFormattedList = config.nonAgendaDayCellHeaderFormat.split('|').map(item => datetime.format(item));
                     let element;
 
+                    let pFormattedListDay = config.nonAgendaOtherCellHeaderFormatDay.split('|').map(item => datetime.format(item));
+
                     if (typeof nonAgendaCellHeaderTemplateResolver === 'function') {
-                        element = nonAgendaCellHeaderTemplateResolver(schedulerData, item, pFormattedList, style)
+                        element = nonAgendaCellHeaderTemplateResolver(schedulerData, item, pFormattedList, pFormattedListDay, style)
                     }
                     else {
                         const pList = pFormattedList.map((item, index) => (
                             <div key={index}>{item}</div>
                         ));
-
+                        const pListDay = pFormattedListDay.map((item, index) => (
+                            <div key={index}>{item}</div>
+                        ));
+                       
                         element = (
                             <th key={item.time} className="header3-text" style={style}>
                                 <div>
                                     {pList}
+                                </div>
+                                <div>
+                                    {pListDay}
                                 </div>
                             </th>
                         );
@@ -68,7 +76,7 @@ class HeaderView extends Component {
                 
 
                 if (typeof nonAgendaCellHeaderTemplateResolver === 'function') {
-                    return nonAgendaCellHeaderTemplateResolver(schedulerData, item, pFormattedList, style)
+                    return nonAgendaCellHeaderTemplateResolver(schedulerData, item, pFormattedList, pFormattedListDay, style)
                 }
 
                 const pList = pFormattedList.map((item, index) => (
