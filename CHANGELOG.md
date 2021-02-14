@@ -1,5 +1,7 @@
 ## Coming npm version
 
+## npm v0.2.12
+Adds isFriday? && background color in current Day
 ## npm v0.2.11
 Fixes custom header error and Scheduler view vertical align"
 ## npm v0.2.10

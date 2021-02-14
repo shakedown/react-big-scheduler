@@ -612,7 +612,8 @@ export default class SchedulerData {
                         if(hour >= this.config.dayStartFrom && hour <= this.config.dayStopTo) {
                             let time = header.format(DATETIME_FORMAT);
                             let nonWorkingTime = this.behaviors.isNonWorkingTimeFunc(this, time);
-                            headers.push({ time: time, nonWorkingTime: nonWorkingTime });
+                            let isFriday = this.behaviors.isFridayTimeFunc(this, time);
+                            headers.push({ time: time, nonWorkingTime: nonWorkingTime, isFriday: isFriday });
                         }
     
                         header = header.add(this.config.minuteStep, 'minutes');
@@ -626,7 +627,8 @@ export default class SchedulerData {
                     if( this.config.displayWeekend || (dayOfWeek !== 0 && dayOfWeek !== 6))
                     {
                         let nonWorkingTime = this.behaviors.isNonWorkingTimeFunc(this, time);
-                        headers.push({ time: time, nonWorkingTime: nonWorkingTime });
+                        let isFriday = this.behaviors.isFridayTimeFunc(this, time);
+                        headers.push({ time: time, nonWorkingTime: nonWorkingTime , isFriday: isFriday });
                     }
 
                     header = header.add(1, 'days');

@@ -107,6 +107,26 @@ export const isNonWorkingTime = (schedulerData, time) => {
     return false;
 }
 
+export const isFridayTime = (schedulerData, time) => {
+    const { localeMoment } = schedulerData;
+
+    let dayOfWeek = localeMoment(time).weekday();
+    if (dayOfWeek === 5){
+        return true;
+    }
+    return false;
+}
+
+export const isCurrentTime = (schedulerData, time) => {
+    const { localeMoment } = schedulerData;
+
+    let dayOfWeek = localeMoment(time).weekday();
+    if (dayOfWeek === 5){
+        return true;
+    }
+    return false;
+}
+
 export default {
     //getSummaryFunc: getSummary,
     getSummaryFunc: undefined,
@@ -118,4 +138,5 @@ export default {
     getDateLabelFunc: getDateLabel,
     getEventTextFunc: getEventText,
     isNonWorkingTimeFunc: isNonWorkingTime,
+    isFridayTimeFunc: isFridayTime,
 }
