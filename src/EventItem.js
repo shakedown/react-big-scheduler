@@ -483,6 +483,14 @@ class EventItem extends Component {
             bgColor = eventItem.bgColor;
 
         let titleText = schedulerData.behaviors.getEventTextFunc(schedulerData, eventItem);
+        let labelText = schedulerData.behaviors.getEventLabelFunc(schedulerData, eventItem);
+
+        let img = config.defaultImg;
+        
+        if (!!eventItem.img) {
+            img = schedulerData.behaviors.getEventImgFunc(schedulerData, eventItem);
+        }
+        
         let content = (
             <EventItemPopover
                 {...this.props}
@@ -494,7 +502,13 @@ class EventItem extends Component {
         );
 
         let start = localeMoment(eventItem.start);
+        let end = localeMoment(eventItem.end);
+
+        const diffTime = Math.abs(new Date(start.format('M/D/YYYY')) - new Date(end.format('M/D/YYYY')));
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+
         let eventTitle = isInPopover ? `${start.format('HH:mm')} ${titleText}` : titleText;
+
         let startResizeDiv = <div />;
         if (this.startResizable(this.props))
             startResizeDiv = <div className="event-resizer event-start-resizer" ref={(ref) => this.startResizer = ref}></div>;
@@ -505,9 +519,9 @@ class EventItem extends Component {
         let eventItemTemplate = (
             <div className={roundCls + ' event-item'} key={eventItem.id}
                  style={{height: config.eventItemHeight, backgroundColor: bgColor}}>
-                     <span style={{marginLeft: '10px', lineHeight: `${config.eventItemHeight}px` }}>X days</span>
-                <span style={{marginLeft: '30px', lineHeight: `${config.eventItemHeight}px` }}>{eventTitle}</span>
-                <Icon type="instagram" style={{fontSize:'18px', marginLeft: '40px', lineHeight: `${config.eventItemHeight}px` }} /> 
+                     <span style={{marginLeft: '10px', lineHeight: `${config.eventItemHeight}px` }}>{diffDays} days</span>
+                <span style={{marginLeft: '30px', lineHeight: `${config.eventItemHeight}px` }}>{labelText}</span>
+                <img className={'circle'} src={img} style={{marginLeft: '50px'}}></img> 
             </div>
         );
         if(eventItemTemplateResolver != undefined)

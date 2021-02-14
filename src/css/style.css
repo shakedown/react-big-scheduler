@@ -314,3 +314,10 @@ table.resource-table tr td:last-child, /*table.scheduler-bg-table tr td:last-chi
 .icon-header {
     padding-top: 20px;
 }
+
+.circle { 
+    border-radius: 50%;
+    width: 20px;
+    height: 20px; 
+    object-fit: contain;
+ }

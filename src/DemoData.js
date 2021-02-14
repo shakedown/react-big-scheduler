@@ -58,6 +58,8 @@ const DemoData = {
             end: '2017-12-19 23:30:00',
             resourceId: 'r1',
             title: 'I am finished',
+            label: 'QA Failed',
+            img: 'https://miro.medium.com/fit/c/28/28/1*UJzclN5h-DYWjRyVqXThUw.png',
             bgColor: '#D9D9D9',
             showPopover: false
         },
@@ -67,6 +69,7 @@ const DemoData = {
             end: '2017-12-26 23:30:00',
             resourceId: 'r2',
             title: 'I am not resizable',
+            label: 'Development',
             resizable: false
         },
         {
@@ -75,6 +78,7 @@ const DemoData = {
             end: '2017-12-20 23:30:00',
             resourceId: 'r3',
             title: 'I am not movable',
+            label: 'Development',
             movable: false
         },
         {
@@ -83,6 +87,7 @@ const DemoData = {
             end: '2017-12-20 23:30:00',
             resourceId: 'r4',
             title: 'I am not start-resizable',
+            label: 'QA Complete',
             startResizable: false,
         },
         {
@@ -91,6 +96,7 @@ const DemoData = {
             end: '2017-12-20 23:30:00',
             resourceId: 'r5',
             title: 'I am not end-resizable',
+            label: 'QA',
             endResizable: false
         },
         {
@@ -98,13 +104,15 @@ const DemoData = {
             start: '2017-12-19 15:35:00',
             end: '2017-12-19 23:30:00',
             resourceId: 'r6',
-            title: 'I am normal'
+            title: 'I am normal',
+            label: 'To Do',
         },
         {
             id: 7,
             start: '2017-12-19 15:40:00',
             end: '2017-12-20 23:30:00',
             resourceId: 'r7',
+            label: 'Development',
             title: 'I am exceptional',
             bgColor: '#FA9E95'
         },
@@ -112,6 +120,7 @@ const DemoData = {
             id: 8,
             start: '2017-12-19 15:50:00',
             end: '2017-12-19 23:30:00',
+            label: 'QA',
             resourceId: 'r0',
             title: 'I am locked',
             movable: false,

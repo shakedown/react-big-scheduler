@@ -85,6 +85,32 @@ export const getEventText = (schedulerData, event) => {
     return eventText;
 }
 
+export const getEventLabel = (schedulerData, event) => {
+    if(!schedulerData.isEventPerspective) return event.label;
+
+    let eventLabel = event.label;
+    schedulerData.resources.forEach((item) => {
+        if(item.id === event.resourceId) {
+            eventLabel = item.label;
+        }
+    })
+
+    return eventLabel;
+}
+
+export const getEventImg = (schedulerData, event) => {
+    if(!schedulerData.isEventPerspective) return event.img;
+
+    let eventImg = event.img;
+    schedulerData.resources.forEach((item) => {
+        if(item.id === event.resourceId) {
+            eventLabel = item.img;
+        }
+    })
+
+    return eventImg;
+}
+
 export const getScrollSpecialMoment = (schedulerData, startMoment, endMoment) => {
     // return endMoment;
     const { localeMoment } = schedulerData;
@@ -137,6 +163,8 @@ export default {
     getScrollSpecialMomentFunc: getScrollSpecialMoment,
     getDateLabelFunc: getDateLabel,
     getEventTextFunc: getEventText,
+    getEventLabelFunc: getEventLabel,
+    getEventImgFunc: getEventImg,
     isNonWorkingTimeFunc: isNonWorkingTime,
     isFridayTimeFunc: isFridayTime,
 }
