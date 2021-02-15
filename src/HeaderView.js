@@ -78,7 +78,7 @@ class HeaderView extends Component {
                     style = !!item.nonWorkingTime ? {color: config.nonWorkingTimeHeadColor, backgroundColor: config.nonWorkingTimeHeadBgColor} : {};
 
                 if (isCurrentDate)
-                    style = {backgroundColor: config.currentDayBgColor}
+                    style = { ...style, backgroundColor: config.currentDayBgColor}
 
                 let pFormattedList = config.nonAgendaOtherCellHeaderFormat.split('|').map(item => datetime.format(item));
                 let pFormattedListDay = config.nonAgendaOtherCellHeaderFormatDay.split('|').map(item => datetime.format(item));

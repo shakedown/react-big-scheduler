@@ -1,5 +1,7 @@
 ## Coming npm version
 
+## npm v0.2.15
+Fixes HeaderView currentDay
 ## npm v0.2.14
 Fixes errors
 ## npm v0.2.13
