@@ -13,7 +13,7 @@ class CustomHeaders extends Component {
       calendarPopoverEnabled: false,
       project: 'Project Name', 
       projectUrl: 'www.test.com',
-      projectImage: 'icon url'
+      projectImage: 'https://assets.gitlab-static.net/uploads/-/system/user/avatar/7873947/avatar.png'
     });
     schedulerData.localeMoment.locale('en');
     schedulerData.setResources(DemoData.resources);

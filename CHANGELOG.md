@@ -1,5 +1,7 @@
 ## Coming npm version
 
+## npm v0.2.14
+Fixes errors
 ## npm v0.2.13
 Adds EventImg && days in Gantt
 ## npm v0.2.12

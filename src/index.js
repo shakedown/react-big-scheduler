@@ -278,7 +278,8 @@ class Scheduler extends Component {
         let popover = <div className="popover-calendar"><Calendar fullscreen={false} onSelect={this.onSelect}/></div>;
         let resourceTableWidth = schedulerData.getResourceTableWidth();
         const project = config.project;
-        const projectImg = config.projectImage;
+        let projectImg = config.projectImage ? config.projectImage : config.defaultImg;
+
         const projectUrl = config.projectUrl;
         let schedulerHeader = <div />;
         if(config.headerEnabled) {

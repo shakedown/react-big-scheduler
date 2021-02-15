@@ -9,7 +9,7 @@ export default {
 
     project: 'Set ProjectName',
     projectUrl: '',
-    projectImage: 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y',
+    projectImage: '',
 
     defaultImg: 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y',
     agendaResourceTableWidth: 160,

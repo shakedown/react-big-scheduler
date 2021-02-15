@@ -23,6 +23,9 @@ class Locale extends Component{
             eventItemPopoverDateFormat: 'M月D日',
             nonAgendaDayCellHeaderFormat: 'HH:mm',
             nonAgendaOtherCellHeaderFormat: 'ddd|M/D',
+            project: 'Project Name', 
+            projectUrl: 'www.test.com',
+            projectImage: '',
             views: [
                 {viewName: '天', viewType: ViewTypes.Day, showAgenda: false, isEventPerspective: false},
                 {viewName: '周', viewType: ViewTypes.Week, showAgenda: false, isEventPerspective: false},
