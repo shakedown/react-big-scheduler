@@ -45,7 +45,7 @@ const DemoData = {
         },
         {
             id: 'r7',
-            name: 'Resource7Resource7',
+            name: 'Resource 7Resource7, Resource7Resource7Resource7 Resource7Resource7Resource7Resource7Resource7Resource7Resource7',
             author: "Federico Osorio",
             bgColor: '#FA9E95',
             issue: '#20'

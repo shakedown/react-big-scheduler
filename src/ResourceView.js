@@ -52,19 +52,19 @@ class ResourceView extends Component {
                 );
             }
             indents.push(indent);
-                    
+
             let a = slotClickedFunc != undefined ? <span className="slot-cell">{indents}<a className="slot-text" onClick={() => {
                 slotClickedFunc(schedulerData, item);
             }}>{item.slotName}</a></span>
-                : <span className="slot-cell">{indents}<span className="slot-text">{item.slotName}</span></span>;
+                : <span className="slot-cell">{indents}<span className="slot-text header4-text overflow2-text">{item.slotName}</span></span>;
             let slotItem = (
-                <div>
-                    <div title={item.slotName} className="overflow-text header2-text" style={{textAlign: "left"}}>
+                <div style={{width: width}}>
                     <div className="overflow-text header2-text" style={{textAlign: "left", color: '#F08421', fontSize: '14px'}}>
                          {item.slotIssue ? item.slotIssue : ''}
                     </div>
+                    <div className="header2-text" style={{textAlign: "left"}}>
                     {a}
-                     </div>
+                    </div>
                      <div className="overflow-text header2-text" style={{textAlign: "left"}}>
                          <span className=' overflow-text header3-text'>Assignee:</span> {item.slotAuthor ? item.slotAuthor : 'Unassignee'}
                     </div>
@@ -78,7 +78,7 @@ class ResourceView extends Component {
                     slotItem = temp;
             }
 
-            let tdStyle = { height: item.rowHeight, whiteSpace: 'pre-wrap' };
+            let tdStyle = { height: item.rowHeight };
             if(item.groupOnly) {
                 tdStyle = {
                     ...tdStyle,

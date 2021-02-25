@@ -6,15 +6,15 @@
 
 .header2-text {
     padding-left: 1vw;
-    padding-bottom: 1vw;
     font-size: 14px;
     font-weight: 500;
     margin-left: 500;
 }
 
-.header-col2 {
-
-    
+.header4-text {
+    padding-left: 1vw;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .testing {
@@ -189,6 +189,14 @@ table.resource-table tr td:last-child, /*table.scheduler-bg-table tr td:last-chi
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    padding-right: 5px !important;
+}
+
+.overflow2-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 400px;
     padding-right: 5px !important;
 }
 
