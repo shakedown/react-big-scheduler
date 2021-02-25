@@ -262,8 +262,9 @@ table.resource-table tr td:last-child, /*table.scheduler-bg-table tr td:last-chi
 
 .container-grid {
   display: grid;
-  grid-template-columns: .3fr .8fr .1fr;
+  grid-template-columns: repeat(.3fr .8fr .1fr);
   grid-auto-flow: column;
+  overflow-wrap: break-word;
 }
 
 .wrapper-header {
@@ -321,3 +322,9 @@ table.resource-table tr td:last-child, /*table.scheduler-bg-table tr td:last-chi
     height: 20px; 
     object-fit: contain;
  }
+
+ @media(max-width: 1400px) {
+    .image-header {
+        display: none !important;
+    }
+}
