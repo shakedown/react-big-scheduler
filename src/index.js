@@ -295,7 +295,7 @@ class Scheduler extends Component {
                         <div className="text-header2">Project</div>
                         <a className="text-header-link" href={projectUrl} target="_blank">Open in Gitlab</a>
                         </div>
-                        <Icon type="more" style={{alignItems: 'flex-start', marginRight: "8px"}} className="icon-header"/>
+                        <Icon type="more" style={{}} className="icon-header"/>
                         </div>
                     </div>
                     </Col>

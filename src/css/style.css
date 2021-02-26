@@ -196,7 +196,7 @@ table.resource-table tr td:last-child, /*table.scheduler-bg-table tr td:last-chi
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 400px;
+    max-width: 400px;
     padding-right: 5px !important;
 }
 

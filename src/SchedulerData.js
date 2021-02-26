@@ -294,7 +294,7 @@ export default class SchedulerData {
             : resourceTableConfigWidth;
         if(this.isSchedulerResponsive() && ( this.getContentTableWidth() + resourceTableWidth < schedulerWidth ))
             resourceTableWidth = schedulerWidth - this.getContentTableWidth();
-        return resourceTableWidth;
+        return resourceTableWidth > 600 ? 600 : resourceTableWidth;
     }
 
     getContentCellWidth(){

@@ -6,7 +6,7 @@ export default {
     besidesWidth: 20,
     schedulerMaxHeight: 0,
     tableHeaderHeight: 40,
-    schedulerMinWidth: 1100,
+    schedulerMinWidth: 700,
 
     project: 'Set ProjectName',
     projectUrl: '',

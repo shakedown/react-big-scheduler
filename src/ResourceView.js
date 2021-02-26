@@ -59,13 +59,13 @@ class ResourceView extends Component {
                 : <span className="slot-cell">{indents}<span className="slot-text header4-text overflow2-text">{item.slotName}</span></span>;
             let slotItem = (
                 <div style={{width: width}}>
-                    <div className="overflow-text header2-text" style={{textAlign: "left", color: '#F08421', fontSize: '14px'}}>
+                    <div className="overflow-text header2-text" style={{textAlign: "left", color: '#F08421', fontSize: '14px', marginBottom:'15px'}}>
                          {item.slotIssue ? item.slotIssue : ''}
                     </div>
-                    <div className="header2-text" style={{textAlign: "left"}}>
+                    <div className=" header2-text" style={{textAlign: "left"}}>
                     {a}
                     </div>
-                     <div className="overflow-text header2-text" style={{textAlign: "left"}}>
+                     <div className="overflow-text header2-text" style={{textAlign: "left", marginTop: '15px'}}>
                          <span className=' overflow-text header3-text'>Assignee:</span> {item.slotAuthor ? item.slotAuthor : 'Unassignee'}
                     </div>
                 </div>
