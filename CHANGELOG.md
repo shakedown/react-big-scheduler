@@ -1,5 +1,7 @@
 ## Coming npm version
 
+## npm v2.0.18
+Reverts Scheduler minwidth
 ## npm v2.0.17
 Minor fixes
 ## npm v2.0.16
