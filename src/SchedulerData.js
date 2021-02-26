@@ -283,7 +283,6 @@ export default class SchedulerData {
     getSchedulerWidth() {
         let baseWidth = this.documentWidth - this.config.besidesWidth > 0 ? this.documentWidth - this.config.besidesWidth : 0;
         let minWidth = (parseInt(baseWidth * Number(this.config.schedulerWidth.slice(0,-1)) / 100)) <= this.config.schedulerMinWidth ? this.config.schedulerMinWidth : parseInt(baseWidth * Number(this.config.schedulerWidth.slice(0,-1)) / 100);
-
         return this.isSchedulerResponsive() ? minWidth : this.config.schedulerWidth;
     }    
 
@@ -294,7 +293,7 @@ export default class SchedulerData {
             : resourceTableConfigWidth;
         if(this.isSchedulerResponsive() && ( this.getContentTableWidth() + resourceTableWidth < schedulerWidth ))
             resourceTableWidth = schedulerWidth - this.getContentTableWidth();
-        return resourceTableWidth > 600 ? 600 : resourceTableWidth;
+        return resourceTableWidth;
     }
 
     getContentCellWidth(){
