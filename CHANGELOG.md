@@ -1,5 +1,7 @@
 ## Coming npm version
 
+## npm v2.0.17
+Minor fixes
 ## npm v2.0.16
 Fixes Style (Resources overlap)
 ## npm v2.0.15
