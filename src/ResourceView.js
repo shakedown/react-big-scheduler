@@ -71,7 +71,6 @@ class ResourceView extends Component {
                 </div>
                  
             );
-            console.log(width, 'width');
 
             if(!!slotItemTemplateResolver) {
                 let temp = slotItemTemplateResolver(schedulerData, item, slotClickedFunc, width, "overflow-text header2-text");
