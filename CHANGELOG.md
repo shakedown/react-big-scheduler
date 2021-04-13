@@ -1,5 +1,6 @@
 ## Coming npm version
-
+## npm v2.0.20
+Remove logs
 ## npm v2.0.19
 Fixes text overflow
 ## npm v2.0.18
