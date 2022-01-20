@@ -3,8 +3,7 @@ import { Modal, Form, Input, Radio } from 'antd';
 const FormItem = Form.Item;
 
 
-const AddResourceForm = Form.create()(
-    (props) => {
+const AddResourceForm = (props) => {
         const { visible, onCancel, onCreate, form } = props;
         const { getFieldDecorator } = form;
         return (
@@ -26,7 +25,6 @@ const AddResourceForm = Form.create()(
                 </Form>
             </Modal>
         );
-    }
-);
+    };
 
 export default AddResourceForm

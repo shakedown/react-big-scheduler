@@ -19,7 +19,7 @@
   "main": "lib/index",
   "repository": {
     "type": "git",
-    "url": "git@github.com:hiramzamorano/react-big-scheduler.git"
+    "url": "git@github.com:shakedown/react-big-scheduler.git"
   },
   "license": "MIT",
   "config": {},
