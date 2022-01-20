@@ -1,6 +1,6 @@
 {
-  "name": "scheduler-react",
-  "version": "2.0.20",
+  "name": "scheduler-react-obi",
+  "version": "0.0.1",
   "description": "A scheduler and resource planning component built for React",
   "keywords": [
     "scheduler",
