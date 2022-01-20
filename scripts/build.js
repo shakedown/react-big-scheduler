@@ -58,18 +58,24 @@ async function build() {
 
     // compile antd-hack less into css and copy it into lib
     process.stdout.write('Implementing antd hack... \n');
-    const heckResult = await exec(
-      `lessc --js ${hackFileSource} ${hackFileOutputPath}`
-    );
+    
+    // Hack below is disabled as it breaks the build
+    // const heckResult = await exec(
+    //   `lessc --js ${hackFileSource} ${hackFileOutputPath}`
+    // );
+
+    // console.log(heckResult);
+
     const heckCssResult = await exec(
       `lessc --js ${hackCssFileSource} ${hackCssFileOutputPath}`
     );
+
     // append lib/index.js with line importing antd-hack
     const linesToBeAdded = [
       '',
       '',
       '// this line has been added by scripts/build.js',
-      "require('./css/antd-globals-hiding-hack.css');",
+      "// require('./css/antd-globals-hiding-hack.css');",
       "require('./css/style.css');",
     ]
     await appendFile(
