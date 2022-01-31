@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
-import {PropTypes} from 'prop-types'
-import Icon from 'antd/lib/icon'
+import React, {Component} from 'react';
+import {PropTypes} from 'prop-types';
+import { MinusSquareOutlined, PlusSquareOutlined } from '@ant-design/icons';
 
 class AuthorView extends Component {
 
@@ -33,13 +33,13 @@ class AuthorView extends Component {
             let indent = <span key={`es${item.indent}`} className="expander-space"></span>;
             if(item.hasChildren) {
                 indent = item.expanded ? (
-                    <Icon type="minus-square" key={`es${item.indent}`} style={{}} className=""
+                    <MinusSquareOutlined key={`es${item.indent}`} style={{}} className=""
                         onClick={() => {
                             if(!!toggleExpandFunc)
                                 toggleExpandFunc(schedulerData, item.slotId);
                         }}/>
                 ) : (
-                    <Icon type="plus-square" key={`es${item.indent}`} style={{}} className=""
+                    <PlusSquareOutlined key={`es${item.indent}`} style={{}} className=""
                         onClick={() => {
                             if(!!toggleExpandFunc)
                                 toggleExpandFunc(schedulerData, item.slotId);

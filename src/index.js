@@ -24,32 +24,24 @@ import {PropTypes} from 'prop-types'
 // The next components have their own specific stylesheets which we import
 // separately here to avoid importing from files which have required the global
 // antd styles.
-import Col from 'antd/lib/col'
-import Row from 'antd/lib/row'
-import Icon from 'antd/lib/icon'
-import 'antd/lib/select/style/index.css'
-import 'antd/lib/grid/style/index.css'
-import Radio from 'antd/lib/radio'
-import 'antd/lib/radio/style/index.css'
-import Popover from 'antd/lib/popover'
-import 'antd/lib/popover/style/index.css'
-import Calendar from 'antd/lib/calendar'
-import 'antd/lib/calendar/style/index.css'
-import EventItem from './EventItem'
-import DnDSource from './DnDSource'
-import DnDContext from './DnDContext'
-import ResourceView from './ResourceView'
-import AuthorView from './AuthorView'
-import HeaderView from './HeaderView'
-import BodyView from './BodyView'
-import ResourceEvents from './ResourceEvents'
-import AgendaView from './AgendaView'
-import AddMorePopover from './AddMorePopover'
-import ViewTypes from './ViewTypes'
-import CellUnits from './CellUnits'
-import SummaryPos from './SummaryPos'
-import SchedulerData from './SchedulerData'
-import DemoData from './DemoData'
+
+import { Col, Row, Radio, Popover, Calendar } from 'antd';
+import { LeftOutlined, RightOutlined, MoreOutlined } from '@ant-design/icons';
+import EventItem from './EventItem';
+import DnDSource from './DnDSource';
+import DnDContext from './DnDContext';
+import ResourceView from './ResourceView';
+import AuthorView from './AuthorView';
+import HeaderView from './HeaderView';
+import BodyView from './BodyView';
+import ResourceEvents from './ResourceEvents';
+import AgendaView from './AgendaView';
+import AddMorePopover from './AddMorePopover';
+import ViewTypes from './ViewTypes';
+import CellUnits from './CellUnits';
+import SummaryPos from './SummaryPos';
+import SchedulerData from './SchedulerData';
+import DemoData from './DemoData';
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 
@@ -295,15 +287,15 @@ class Scheduler extends Component {
                         <div className="text-header2">Project</div>
                         <a className="text-header-link" href={projectUrl} target="_blank">Open in Gitlab</a>
                         </div>
-                        <Icon type="more" style={{}} className="icon-header"/>
+                        <MoreOutlined style={{}} className="icon-header"/>
                         </div>
                     </div>
                     </Col>
                     <Col>
                     <div className="header-col2">
                         <div className='header2-text'>
-                            <Icon type="caret-left" style={{color: '#CACCCD', marginRight: "8px"}} className="icon-nav"
-                                    onClick={this.goBack}/>
+                            <LeftOutlined style={{color: '#CACCCD', marginRight: "8px"}} className="icon-nav"
+                                    onClick={this.goBack} />
                             {
                             calendarPopoverEnabled
                                 ?
@@ -314,7 +306,7 @@ class Scheduler extends Component {
                                 </Popover>
                                 : <span className={'header2-text-label'}>{dateLabel}</span>
                             }
-                            <Icon type="caret-right" style={{color: '#CACCCD', marginLeft: "8px"}} className="icon-nav"
+                            <RightOutlined style={{color: '#CACCCD', marginLeft: "8px"}} className="icon-nav"
                                     onClick={this.goNext}/>
                         </div>
                         </div>
