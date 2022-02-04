@@ -523,9 +523,9 @@ class EventItem extends Component {
             </div>
         );
         if(eventItemTemplateResolver != undefined)
-            eventItemTemplate = eventItemTemplateResolver(schedulerData, eventItem, bgColor, isStart, isEnd, 'event-item', config.eventItemHeight, undefined);
+            eventItemTemplate = eventItemTemplateResolver(schedulerData, eventItem, bgColor, isStart, isEnd, `${roundCls} event-item`, config.eventItemHeight, undefined);
 
-        let a = <a className="timeline-event" style={{left: left, width: width, top: '35%'}} onClick={() => { if(!!eventItemClick) eventItemClick(schedulerData, eventItem);}}>
+        let a = <a className="timeline-event" style={{left: left, width: width, top: top}} onClick={() => { if(!!eventItemClick) eventItemClick(schedulerData, eventItem);}}>
             {eventItemTemplate}
             {startResizeDiv}
             {endResizeDiv}

@@ -73,12 +73,12 @@ class ResourceView extends Component {
             );
 
             if(!!slotItemTemplateResolver) {
-                let temp = slotItemTemplateResolver(schedulerData, item, slotClickedFunc, width, "overflow-text header2-text");
+                let temp = slotItemTemplateResolver(schedulerData, item, slotClickedFunc, width, "overflow-text header2-text", toggleExpandFunc);
                 if(!!temp)
                     slotItem = temp;
             }
 
-            let tdStyle = { height: item.rowHeight, display: 'inline-block' };
+            let tdStyle = { height: item.rowHeight-1, display: 'inline-block' };
             if(item.groupOnly) {
                 tdStyle = {
                     ...tdStyle,
@@ -89,9 +89,9 @@ class ResourceView extends Component {
             return (
                 <tr key={item.slotId}>
                     <td data-resource-id={item.slotId} style={tdStyle}>
-                        <div style={{borderLeft: `6px solid ${bgColor}`}}>
+                        
                              {slotItem}
-                        </div>
+
                     </td>
                 </tr>
             );

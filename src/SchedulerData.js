@@ -730,6 +730,7 @@ export default class SchedulerData {
                 hasChildren: false,
                 expanded: true,
                 render: true,
+                meta: slot.meta,
             };
             let id = slot.id;
             let value = undefined;
@@ -902,7 +903,8 @@ export default class SchedulerData {
                         if(header.count > resourceEvents.rowMaxCount) {
                             resourceEvents.rowMaxCount = header.count;
                             let rowsCount = (cellMaxEventsCount <= cellMaxEventsCountValue && resourceEvents.rowMaxCount > cellMaxEventsCount) ? cellMaxEventsCount : resourceEvents.rowMaxCount;
-                            let newRowHeight = rowsCount * this.config.eventItemLineHeight + (this.config.creatable && this.config.checkConflict === false ? 20 : 2);
+                            //let newRowHeight = rowsCount * this.config.eventItemLineHeight + (this.config.creatable && this.config.checkConflict === false ? 20 : 2);
+                            let newRowHeight = rowsCount * (this.config.eventItemHeight + 25);
                             if(newRowHeight > resourceEvents.rowHeight)
                                 resourceEvents.rowHeight = newRowHeight;
                         }

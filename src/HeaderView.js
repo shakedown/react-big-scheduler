@@ -71,9 +71,9 @@ class HeaderView extends Component {
                 let isCurrentDate = datetime.isSame(new Date(), 'day');
 
                 style = !!item.nonWorkingTime ? {width: cellWidth, color: config.nonWorkingTimeHeadColor, backgroundColor: config.nonWorkingTimeHeadBgColor} : {width: cellWidth};
-                if (item.isFriday) {
-                    style = { ...style, borderRight: '2px solid #F08421'}
-                }
+                // if (item.isFriday) {
+                //     style = { ...style, borderRight: '2px solid #F08421'}
+                // }
                 if(index === headers.length - 1)
                     style = !!item.nonWorkingTime ? {color: config.nonWorkingTimeHeadColor, backgroundColor: config.nonWorkingTimeHeadBgColor} : {};
 
@@ -98,12 +98,18 @@ class HeaderView extends Component {
 
                 return (
                     <th key={item.time} className="header3-text" style={style}>
-                         <div>
-                           {pListDay}
-                        </div>
-                        <div className="headerDate-text">
-                            {pList}
-                        </div>
+                       {config.customCellHeaderFormat
+                            ? <div>{`${datetime.format(config.customCellHeaderFormat)}`}</div>
+                            : <div>
+                                <div>
+                                    {pListDay}
+                                    
+                                </div>
+                                <div className="headerDate-text">
+                                    {pList}
+                                </div>
+                            </div>
+                        }
                     </th>
                 );
             });

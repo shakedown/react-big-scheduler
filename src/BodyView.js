@@ -26,12 +26,12 @@ class BodyView extends Component {
                 
                 let key = item.slotId + '_' + header.time;
                 let style = index === headers.length - 1 ? {} : {width: cellWidth};
-                if(!!header.isFriday)
-                style = {...style, borderRight: '2px solid #F08421'};
-                if(!!header.nonWorkingTime)
-                    style = {...style, backgroundColor: config.nonWorkingTimeBodyBgColor};
+                // if(!!header.isFriday)
+                // style = {...style, borderRight: '2px solid #F08421'};
                 if(item.groupOnly)
                     style = {...style, backgroundColor: config.groupOnlySlotColor};
+                if(!!header.nonWorkingTime)
+                    style = {...style, backgroundColor: config.nonWorkingTimeBodyBgColor};
                 if(!!behaviors.getNonAgendaViewBodyCellBgColorFunc){
                     let cellBgColor = behaviors.getNonAgendaViewBodyCellBgColorFunc(schedulerData, item.slotId, header);
                     if(!!cellBgColor)

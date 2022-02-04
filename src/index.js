@@ -194,8 +194,8 @@ class Scheduler extends Component {
                 contentHeight = this.state.contentHeight;
             let resourcePaddingBottom = resourceScrollbarHeight === 0 ? contentScrollbarHeight : 0;
             let contentPaddingBottom = contentScrollbarHeight === 0 ? resourceScrollbarHeight : 0;
-            let schedulerContentStyle = {overflow: 'auto', margin: "0px", position: "relative", paddingBottom: contentPaddingBottom, backgroundColor: '#F1F1F1'};
-            let resourceContentStyle = {border: "1px solid #e9e9e9", overflowWrap: 'break-word', width: resourceTableWidth + resourceScrollbarWidth - 2, margin: `0px -${contentScrollbarWidth}px 0px 0px`};
+            let schedulerContentStyle = {overflow: 'auto', margin: "0px", position: "relative", paddingBottom: contentPaddingBottom, backgroundColor: '#FFFFFF'};
+            let resourceContentStyle = {overflowWrap: 'break-word', width: resourceTableWidth + resourceScrollbarWidth - 2, margin: `0px -${contentScrollbarWidth}px 0px 0px`};
             if (config.schedulerMaxHeight > 0) {
                 schedulerContentStyle = {
                     ...schedulerContentStyle,
@@ -213,7 +213,7 @@ class Scheduler extends Component {
                 <tr>
                     <td style={{width: resourceTableWidth, verticalAlign: 'top'}}>
                         <div className="resource-view">
-                            <div style={{overflow: "hidden", borderBottom: "1px solid #e9e9e9", height: config.tableHeaderHeight}}>
+                            <div style={{overflow: "hidden", borderBottom: "1px solid #DBDCDF", height: config.tableHeaderHeight}}>
                                 <div style={{overflowX: "scroll", overflowY: "hidden", margin: `0px 0px -${contentScrollbarHeight}px`}}>
                                     <table className="resource-table">
                                         <thead>
@@ -236,7 +236,7 @@ class Scheduler extends Component {
                     </td>
                     <td style={{width: schedulerContainerWidth, verticalAlign: 'top'}}>
                         <div className="scheduler-view" style={{width: schedulerContainerWidth, verticalAlign: 'top'}}>
-                            <div style={{overflow: "hidden", borderBottom: "1px solid #e9e9e9", height: config.tableHeaderHeight}}>
+                            <div style={{overflow: "hidden", borderBottom: "1px solid #DBDCDF", height: config.tableHeaderHeight}}>
                                 <div style={{overflowX: "scroll", overflowY: "hidden", margin: `0px 0px -${contentScrollbarHeight}px`}} ref={this.schedulerHeadRef} onMouseOver={this.onSchedulerHeadMouseOver} onMouseOut={this.onSchedulerHeadMouseOut} onScroll={this.onSchedulerHeadScroll}>
                                     <div style={{paddingRight: `${contentScrollbarWidth}px`, width: schedulerWidth + contentScrollbarWidth}}>
                                         <table className="scheduler-bg-table">
@@ -245,7 +245,7 @@ class Scheduler extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div style={schedulerContentStyle} ref={this.schedulerContentRef} onMouseOver={this.onSchedulerContentMouseOver} onMouseOut={this.onSchedulerContentMouseOut} onScroll={this.onSchedulerContentScroll} >
+                            <div className={'resourceEventList'} style={schedulerContentStyle} ref={this.schedulerContentRef} onMouseOver={this.onSchedulerContentMouseOver} onMouseOut={this.onSchedulerContentMouseOut} onScroll={this.onSchedulerContentScroll} >
                                 <div style={{width: schedulerWidth, height: contentHeight, textAlign:'center'}}>
                                     <div className="scheduler-content">
                                         <table className="scheduler-content-table" >
@@ -276,10 +276,10 @@ class Scheduler extends Component {
         let schedulerHeader = <div />;
         if(config.headerEnabled) {
             schedulerHeader = (
-                <Row type="flex" align="middle" justify="space-between" style={{ border: '2px solid #e9e9e9', paddingRight: '10px'}}>
+                <Row type="flex" align="middle" justify="space-between" style={{ border: '2px solid #DBDCDF', paddingRight: '10px'}}>
                     {leftCustomHeader}
                     <Col>
-                    <div style={{width: resourceTableWidth, borderRight: '2px solid #e9e9e9', textAlign: 'center'}}>
+                    <div style={{width: resourceTableWidth, borderRight: '2px solid #DBDCDF', textAlign: 'center'}}>
                         <div className="container-grid">
                         <div className="image-header" style={{ backgroundImage: `url(${projectImg})`}}></div>
                         <div className="wrapper-header">

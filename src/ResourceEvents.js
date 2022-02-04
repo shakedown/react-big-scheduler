@@ -261,7 +261,7 @@ class ResourceEvents extends Component {
             if (headerItem.count > 0 || headerItem.summary != undefined) {
 
                 let isTop = config.summaryPos === SummaryPos.TopRight || config.summaryPos === SummaryPos.Top || config.summaryPos === SummaryPos.TopLeft;
-                let marginTop = resourceEvents.hasSummary && isTop ? 1 + config.eventItemLineHeight : 1;
+                let marginTop = resourceEvents.hasSummary && isTop ? 1 + config.eventItemLineHeight : 25;
                 let renderEventsMaxIndex = headerItem.addMore === 0 ? cellMaxEvents : headerItem.addMoreIndex;
 
                 headerItem.events.forEach((evt, idx) => {
@@ -278,7 +278,7 @@ class ResourceEvents extends Component {
                         let isEnd = eventEnd <= durationEnd;
                         let left = index*cellWidth + (index > 0 ? 2 : 3);
                         let width = (evt.span * cellWidth - (index > 0 ? 5 : 6)) > 0 ? (evt.span * cellWidth - (index > 0 ? 5 : 6)) : 0;
-                        let top = marginTop + idx*config.eventItemLineHeight;
+                        let top = marginTop + idx*config.eventItemHeight + idx*10;
                         let eventItem = <DnDEventItem
                                                    {...this.props}
                                                    key={evt.eventItem.id}
